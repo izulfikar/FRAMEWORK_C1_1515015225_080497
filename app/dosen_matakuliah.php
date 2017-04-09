@@ -35,4 +35,13 @@ class dosen_matakuliah extends Model
 		return $this->hasMany(jadwal_matakuliah::class, 'id');
 		//mendefinisikan dosen_matakuliah memiliki banyak jumlah model lain yaitu jadwal_matakuliah
 	}
+
+	public function listDosenDanMatakuliah()
+	{
+	$out = [];
+	foreach ($this->all() as $dsnMTK) {
+		$out[$dsnMtk->id] = "{$dsnMtk->dosen->nama} (matakuliah{$dsnMtk->matakuliah->title})";
+		}
+	return $out;
+	}
 }

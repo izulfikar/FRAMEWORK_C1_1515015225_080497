@@ -26,7 +26,7 @@ class jadwal_matakuliah extends Model
 	public function dosen_matakuliah()
 	//fungsi public nya adalah model dosen_matakuliah
 	{
-		return $this->hasOne(dosen_matakuliah::class, 'dosen_id');\
+		return $this->hasOne(dosen_matakuliah::class, 'dosen_id');
 		//mendefinisikan jadwal_matakuliah terhubung hanya dengan satu jumlah model yaitu dosen_matakuliah
 
 	}
@@ -35,4 +35,13 @@ class jadwal_matakuliah extends Model
 	{
 		return $this->hasOne(ruangan::class, 'id');
 		//mendefinisikan jadwal_matakuliah terhubung hanya dengan satu jumlah model yaitu ruangan
+	}
+	public function listMahasiswaDanNim()
+	{
+	$out = [];
+	foreach ($this->all() as $mhs) {
+		$out[$mhs->id] = "{$mhs->nama} ({$mhs->nim})";
+		}
+	return $out;
+	}
 }

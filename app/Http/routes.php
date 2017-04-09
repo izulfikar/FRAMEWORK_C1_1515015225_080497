@@ -31,13 +31,13 @@ Route::get('dosen/edit/{dosen}', 'DosenController@edit');
 Route::post('dosen/edit/{dosen}', 'DosenController@update');
 Route::get('dosen/hapus/{dosen}', 'DosenController@hapus');
 
-Route::get('mahasiswa', 'MahasiswaController@awal');
-Route::get('mahasiswa/tambah', 'MahasiswaController@tambah');
-Route::get('mahasiswa/{mahasiswa}', 'MahasiswaController@lihat');
-Route::post('mahasiswa/simpan', 'MahasiswaController@simpan');
-Route::get('mahasiswa/edit/{mahasiswa}', 'MahasiswaController@edit');
-Route::post('mahasiswa/edit/{mahasiswa}', 'MahasiswaController@update');
-Route::get('mahasiswa/hapus/{mahasiswa}', 'MahasiswaController@hapus');
+Route::get('jadwal_matakuliah', 'jadwal_matakuliahController@awal');
+Route::get('jadwal_matakuliah/tambah', 'jadwal_matakuliahController@tambah');
+Route::get('jadwal_matakuliah/{jadwal_matakuliah}', 'jadwal_matakuliahController@lihat');
+Route::post('jadwal_matakuliah/simpan', 'jadwal_matakuliahController@simpan');
+Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'jadwal_matakuliahController@edit');
+Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'jadwal_matakuliahController@update');
+Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}', 'jadwal_matakuliahController@hapus');
 
 Route::get('matakuliah', 'MatakuliahController@awal');
 Route::get('matakuliah/tambah', 'MatakuliahController@tambah');
@@ -61,3 +61,8 @@ Route::get('dosen_matakuliah/tambah', 'Dosen_MatakuliahController@tambah');
 
 Route::get('jadwal_matakuliah', 'Jadwal_MatakuliahController@awal');
 Route::get('jadwal_matakuliah/tambah', 'Jadwal_MatakuliahController@tambah');
+Route::get('jadwal_matakuliah/{jadwal_matakuliah}', 'Jadwal_MatakuliahController@lihat');
+Route::post('jadwal_matakuliah/simpan', 'JadwalMatakuliahController@simpan');
+Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'Jdwal_MatakuliahController@edit');
+Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'Jadwal_MatakuliahController@update');
+Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}', 'Jadwal_MtakuliahController@hapus');
